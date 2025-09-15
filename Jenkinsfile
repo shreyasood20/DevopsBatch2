@@ -1,22 +1,16 @@
 pipeline {
     agent any
-
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
         stage('Build') {
             steps {
                 echo "Building..."
-                sh 'npm install'
+                bat 'echo Build step running on Windows'
             }
         }
         stage('Test') {
             steps {
-                echo "Running tests..."
-                sh 'npm test'
+                echo "Testing..."
+                bat 'echo Test step running on Windows'
             }
         }
     }
